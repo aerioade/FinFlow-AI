@@ -41,24 +41,31 @@ SUPABASE_URL=your_supabase_project_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-### Running Tests
+### Running the Pipeline
 
 ```bash
-# Test AI extraction
-node index.js
+# 🚀 Core pipeline: AI extraction + save to Supabase (fitur utama)
+npm run pipeline
 
-# Test Supabase connection
-node test-db.js
+# Atau dengan pesan custom langsung dari terminal:
+node pipeline.js "Hari ini jual bakso 50 porsi total 375rb, beli tepung 80rb"
+
+# Test AI extraction saja (tanpa simpan ke DB)
+npm run extract
+
+# Test koneksi Supabase
+npm run test:db
 ```
 
 ## 📂 Project Structure
 
 ```
 finai-tester/
-├── index.js        # Gemini AI extraction test
-├── test-db.js      # Supabase connection test
+├── pipeline.js     # ⭐ Core engine: AI extraction → save to Supabase
+├── index.js        # Test AI extraction (output ke console)
+├── test-db.js      # Test koneksi Supabase
 ├── .env            # Environment variables (gitignored)
-└── package.json    # Project dependencies
+└── package.json    # Project dependencies & scripts
 ```
 
 ## 📄 License
